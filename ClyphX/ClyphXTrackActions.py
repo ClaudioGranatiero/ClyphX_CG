@@ -97,6 +97,17 @@ class ClyphXTrackActions(ControlSurfaceComponent):
 	    if args:
 		track.name = args
 	
+    
+    def set_color(self, track, xclip, ident, args): 
+	""" Set track's color """
+	if track in tuple(self.song().tracks) + tuple(self.song().return_tracks):
+	    color = xclip.color
+	    args = args.strip()
+	    if args:
+	        color = int(args,16)
+	    track.color = color
+	
+	
 	
     def rename_all_clips(self, track, xclip, ident, args): 
 	""" Renames all clips on the track based on the track's name or the name specified in args. """

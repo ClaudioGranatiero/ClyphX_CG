@@ -123,6 +123,7 @@ TRACK_ACTIONS = {
     'OUT' : 'adjust_output_routing',
     'OUTSUB' : 'adjust_output_sub_routing',
     'NAME' : 'set_name',
+	'COLOR' : 'set_color',
     'RENAMEALL' : 'rename_all_clips'}  
 
 CLIP_ACTIONS = {
@@ -148,6 +149,7 @@ CLIP_ACTIONS = {
     'LOOP' : 'do_clip_loop_action',
     'SIG' : 'adjust_time_signature',
     'WARP' : 'set_warp',
+	'COLOR' : 'set_clip_color',
     'NAME' : 'set_clip_name'} 
 
 DEVICE_ACTIONS = {
