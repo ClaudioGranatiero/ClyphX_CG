@@ -102,6 +102,9 @@ class ClyphXTrackActions(ControlSurfaceComponent):
 	""" Set track's color """
 	if track in tuple(self.song().tracks) + tuple(self.song().return_tracks):
 	    color = xclip.color
+	    slot = list(self.song().scenes).index(self.song().view.selected_scene)
+	    if track.clip_slots[slot].has_clip:
+		color = track.clip_slots[slot].clip.color
 	    args = args.strip()
 	    if args:
 	        color = int(args,16)
