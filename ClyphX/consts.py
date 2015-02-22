@@ -1,5 +1,5 @@
 """
-# Copyright (C) 2013-2015 Stray <stray411@hotmail.com>
+# Copyright (C) 2013-2014 Stray <stray411@hotmail.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -85,6 +85,7 @@ GLOBAL_ACTIONS = {
     'TGLDETAIL': 'toggle_detail_view',
     'TGLMAIN': 'toggle_main_view',
     'STOPALL' : 'set_stop_all',
+	'TRANSPORT_STOP' : 'transport_stop',
     'SETCONT' : 'set_continue_playback',
     'SETLOC' : 'set_locator',
     'SETSTOP' : 'set_stop_transport',

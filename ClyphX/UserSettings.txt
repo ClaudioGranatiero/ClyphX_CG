@@ -1,4 +1,4 @@
-# Copyright (C) 2013-2015 Stray <stray411@hotmail.com>
+# Copyright (C) 2013-2014 Stray <stray411@hotmail.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -29,7 +29,7 @@
  
 # After saving this file, you will need to close/restart Live for your changes 
 # to take effect.
-   
+    
 # For Windows 7/Vista users, depending on how your privileges are set up, you may 
 # not be able to save changes you make to this file. You may receive an error
 # such as Access Denied when trying to save. If this occurs, you will need to 
@@ -69,7 +69,7 @@ SNAPSHOT_PARAMETER_LIMIT = 500
 ***************************** [EXTRA PREFS] **************************
 
 
-PROCESS_XCLIPS_IF_TRACK_MUTED = True
+PROCESS_XCLIPS_IF_TRACK_MUTED = False
 # Setting:
 # True or False
 
@@ -170,16 +170,6 @@ DEFAULT_INSERTED_MIDI_CLIP_LENGTH = 0
 # beneath PXT-Live or Link. 
 
 
-CSLINKER_MATCHED_LINK = False
-# Setting:
-# True for matched link or False for horizonal/vertical link.
-
-# Description:
-# Determines whether the two Control Surfaces should have a matched link meaning that
-# they will lay on top of each other.  This setting overrides CSLINKER_HORIZONTAL_LINK.
-
-
-
 CSLINKER_HORIZONTAL_LINK = True
 # Setting:
 # True for horizontal link or False for vertical link.
@@ -248,8 +238,11 @@ CSLINKER_SCRIPT_2_NAME = None
 
 # btn_4 = cc, 9, 3, mon
 
-#>>>>>>>>DELETE THIS ENTIRE LINE AND START YOUR LIST HERE<<<<<<<<#
+BCR_PLAY = cc, 1,108,setcont
+BCR_STOP = cc, 1,107,transport_stop
+BCR_ENC1 = cc, 1,57,restart
 
+#>>>>>>>>DELETE THIS ENTIRE LINE AND START YOUR LIST HERE<<<<<<<<#
 
 ******************************* [USER VARIABLES] ******************************* 
 
@@ -265,8 +258,10 @@ CSLINKER_SCRIPT_2_NAME = None
 # The Variables listed below are just examples and can be removed.
 
 
-ex_var1 = 10
-ex_var2 = 1/mute
+snapbase=0
+snapindex=0
+index=22
+C="START"
 
 
 ******************************* [IDENTIFIER NOTE] *******************************
