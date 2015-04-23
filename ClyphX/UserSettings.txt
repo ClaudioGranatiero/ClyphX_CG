@@ -1,4 +1,4 @@
-# Copyright (C) 2013-2014 Stray <stray411@hotmail.com>
+# Copyright (C) 2013-2015 Stray <stray411@hotmail.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -168,6 +168,16 @@ DEFAULT_INSERTED_MIDI_CLIP_LENGTH = 0
 # Note, this functionality is only accessible in Live 9 and, as of Live 9.1.2, Push CANNOT be linked to
 # unless you're using PXT-Live or Link in which case ClyphX needs to be selected in a Control Surface slot
 # beneath PXT-Live or Link. 
+
+
+CSLINKER_MATCHED_LINK = False
+# Setting:
+# True for matched link or False for horizonal/vertical link.
+
+# Description:
+# Determines whether the two Control Surfaces should have a matched link meaning that
+# they will lay on top of each other.  This setting overrides CSLINKER_HORIZONTAL_LINK.
+
 
 
 CSLINKER_HORIZONTAL_LINK = True

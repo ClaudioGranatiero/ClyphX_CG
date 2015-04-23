@@ -144,13 +144,13 @@ class ClyphXClipActions(ControlSurfaceComponent):
 	args = args.strip()
 	if args.startswith(('<', '>')):
 	    factor = self._parent.get_adjustment_factor(args, True)
-	    if IS_LIVE_9:
+	    if IS_LIVE_9 and clip.looping:
 		clip.start_marker = max(0.0, min(clip.end_marker - factor, (clip.start_marker + factor)))
 	    else:
 		clip.loop_start = max(0.0, min(clip.loop_end - factor, (clip.loop_start + factor)))
 	else:
 	    try:
-		if IS_LIVE_9:
+		if IS_LIVE_9 and clip.looping:
 		    clip.start_marker = float(args)
 		else:
 		    clip.loop_start = float(args)

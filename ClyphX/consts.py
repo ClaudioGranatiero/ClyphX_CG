@@ -1,5 +1,5 @@
 """
-# Copyright (C) 2013-2014 Stray <stray411@hotmail.com>
+# Copyright (C) 2013-2015 Stray <stray411@hotmail.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -146,6 +146,7 @@ CLIP_ACTIONS = {
     'DEL' : 'delete_clip',
     'DUPE' : 'duplicate_clip',
     'CHOP' : 'chop_clip',
+    'SPLIT' : 'split_clip',
     'WARPMODE' : 'adjust_warp_mode',
     'LOOP' : 'do_clip_loop_action',
     'SIG' : 'adjust_time_signature',

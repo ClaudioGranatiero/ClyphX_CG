@@ -39,7 +39,7 @@ following recommendations:
 
 - To learn about Python: http://www.diveintopython.net/toc/index.html and http://www.google.com
 
-- To learn the basics of MIDI Remote Scripts/Live API access: http://remotescripts.blogspot.com/ and http://relivethefuture.com/code/live/apidocs/
+- To learn the basics of MIDI Remote Scripts/Live API access: http://remotescripts.blogspot.com/
 
 - Reference of Live functions and such that you can access: http://cycling74.com/docs/max5/refpages/m4l-ref/m4l_live_object_model.html
 

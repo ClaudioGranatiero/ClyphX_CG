@@ -244,7 +244,7 @@ class ClyphXSnapActions(ControlSurfaceComponent):
 	for device in track.devices:
 	    if param_data[DEVICE_SETTINGS_POS].has_key(device.name):
 		self._recall_device_snap(device, param_data[DEVICE_SETTINGS_POS][device.name]['params'])
-		if self._include_nested_devices and self._parent._can_have_nested_devices and device.can_have_chains and param_data[DEVICE_SETTINGS_POS][device.name]['chains']:
+		if self._include_nested_devices and self._parent._can_have_nested_devices and device.can_have_chains and param_data[DEVICE_SETTINGS_POS][device.name].has_key('chains'):
 		    self._recall_nested_device_snap(device, param_data[DEVICE_SETTINGS_POS][device.name]['chains'])
 		del param_data[DEVICE_SETTINGS_POS][device.name]
 		

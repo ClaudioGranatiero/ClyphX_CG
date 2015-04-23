@@ -47,7 +47,7 @@ from Push_APC_Combiner import Push_APC_Combiner
 from consts import *
 
 FOLDER = '/ClyphX/'
-SCRIPT_NAME = 'nativeKONTROL ClyphX v2.4.8 for Live 9'
+SCRIPT_NAME = 'nativeKONTROL ClyphX v2.4.9 for Live 9'
 
 class ClyphX(ControlSurface):
     __module__ = __name__
