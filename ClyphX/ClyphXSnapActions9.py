@@ -271,7 +271,7 @@ class ClyphXSnapActions(ControlSurfaceComponent):
 		    for device_key in stored_devices.keys():
 			if device_key < num_chain_devices:
 			    self._recall_device_snap(chain_devices[device_key], stored_devices[device_key]['params'])
-			    if chain_devices[device_key].can_have_chains:
+			    if chain_devices[device_key].can_have_chains and stored_devices[device_key].has_key('chains'):
 				self._recall_nested_device_snap(chain_devices[device_key], stored_devices[device_key]['chains'])
 		    if not rack.class_name.startswith('Midi') and stored_chain.has_key('mixer'):
 			if chain.mixer_device.volume.is_enabled:

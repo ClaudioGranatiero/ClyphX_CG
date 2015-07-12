@@ -471,6 +471,34 @@ class ClyphXClipActions(ControlSurfaceComponent):
 		dupe.start_marker = dupe_start
 		dupe.loop_start = dupe_start
 		dupe.name = clip.name + '-' + str(index + 1)
+
+		
+    def split_clip(self, clip, track, xclip, ident, args):
+	""" Duplicates the clip and sets each duplicate to have the length specified in args.  This will overwrite clips if any exist in the slots used for duplication. """
+	if IS_LIVE_9:
+	    try:
+		bar_arg = float(args)
+		bar_length = (4.0 / clip.signature_denominator) * clip.signature_numerator
+		split_size = bar_length * bar_arg
+		num_splits = int(clip.length / split_size)
+		if split_size * num_splits < clip.end_marker:
+		    num_splits += 1
+		if num_splits >= 2:
+		    slot_index = list(track.clip_slots).index(clip.canonical_parent)
+		    current_start = clip.start_marker
+		    actual_end = clip.end_marker
+		    for index in xrange(num_splits):
+			track.duplicate_clip_slot(slot_index + index) 
+			dupe_start = (split_size * index) + current_start
+			dupe_end = dupe_start + split_size
+			if dupe_end > actual_end:
+			    dupe_end = actual_end
+			dupe = track.clip_slots[slot_index + index + 1].clip
+			dupe.loop_end = dupe_end
+			dupe.start_marker = dupe_start
+			dupe.loop_start = dupe_start
+			dupe.name = clip.name + '-' + str(index + 1)	
+	    except: pass
 	    
 
     def do_clip_loop_action(self, clip, track, xclip, ident, args):

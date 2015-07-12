@@ -27,6 +27,19 @@ from _Framework.ControlSurfaceComponent import ControlSurfaceComponent
 from consts import *
 
 UNWRITABLE_INDEXES = (17, 35, 53)
+
+INSTRUMENT_MODES = {'DRUM': 'sequencer',
+                    'SCALE': 'instrument'}
+MATRIX_MODES = {'SESSION': 'session',
+                'NOTE': 'note'}
+TRACK_MODES = {'STOP': 'stop',
+               'SOLO': 'solo',
+               'MUTE': 'mute'}
+MAIN_MODES = {'VOLUME': 'volumes',
+              'PAN': 'pan_sends',
+              'TRACK': 'track',
+              'CLIP': 'clip',
+              'DEVICE': 'device'}
     
 class ClyphXPushActions(ControlSurfaceComponent):
     __module__ = __name__
@@ -81,6 +94,30 @@ class ClyphXPushActions(ControlSurfaceComponent):
 		    self._script._note_modes.selected_mode = 'instrument'
 	    elif args.startswith('MSG'):
 		self._display_message(args, xclip)
+	    elif args.startswith('MODE'):
+		self._handle_mode_selection(args.replace('MODE', '').strip())
+
+		
+    def _handle_mode_selection(self, mode_name):
+	""" Handles switching to one of Push's mode if possible. """
+	mode_component = None
+	mode_dict = None
+	if mode_name in INSTRUMENT_MODES:
+	    mode_component = self._script._note_modes
+	    mode_dict = INSTRUMENT_MODES
+	elif mode_name in MATRIX_MODES:
+	    mode_component = self._script._matrix_modes
+	    mode_dict = MATRIX_MODES
+	elif mode_name in TRACK_MODES:
+	    mode_component = self._script._track_modes
+	    mode_dict = TRACK_MODES
+	elif mode_name in MAIN_MODES:
+	    mode_component = self._script._main_modes
+	    mode_dict = MAIN_MODES
+	if mode_component and mode_dict:
+	    if mode_component._last_selected_mode != mode_dict[mode_name]:
+		with self._script._push_injector:
+		    mode_component.selected_mode = mode_dict[mode_name]
 		
 		
     def _display_message(self, args, xclip):

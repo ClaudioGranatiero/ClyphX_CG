@@ -40,7 +40,7 @@ from ActionList import ActionList
 from consts import *
 
 FOLDER = '/ClyphX/'
-SCRIPT_NAME = 'nativeKONTROL ClyphX v2.4.9 for Live 8'
+SCRIPT_NAME = 'nativeKONTROL ClyphX v2.5.0 for Live 8'
 
 class ClyphX(ControlSurface):
     __module__ = __name__

@@ -177,6 +177,7 @@ CSLINKER_MATCHED_LINK = False
 # Description:
 # Determines whether the two Control Surfaces should have a matched link meaning that
 # they will lay on top of each other.  This setting overrides CSLINKER_HORIZONTAL_LINK.
+# and CSLINKER_MULTI_AXIS_LINK.
 
 
 
@@ -186,6 +187,15 @@ CSLINKER_HORIZONTAL_LINK = True
 
 # Description:
 # Determines whether the two Control Surfaces should be horizontal or vertically linked.
+
+
+
+CSLINKER_MULTI_AXIS_LINK = False
+# Setting:
+# True for multi-axis link.
+
+# Determines whether movement should be sychronized in all directions (vertical and horizontal) or
+# purely on a single axis determined by the CS_HORIZONTAL_LINK setting.
 
 
 
