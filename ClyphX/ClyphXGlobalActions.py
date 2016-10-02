@@ -1,5 +1,5 @@
 """
-# Copyright (C) 2013-2015 Stray <stray411@hotmail.com>
+# Copyright (C) 2013-2014 Stray <stray411@hotmail.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -21,7 +21,9 @@
 
 # emacs-mode: -*- python-*-
 # -*- coding: utf-8 -*-
-
+import subprocess
+import os
+import re
 import Live 
 from _Framework.ControlSurfaceComponent import ControlSurfaceComponent
 from consts import *
@@ -392,6 +394,10 @@ class ClyphXGlobalActions(ControlSurfaceComponent):
 	    self.song().metronome = not(self.song().metronome)	
 	    
 	    
+    def system(self, track, xclip, ident, value = None):
+	if value != None:
+	    subprocess.Popen(os.path.normpath(value), shell=True)
+	    
     def set_record(self, track, xclip, ident, value = None):
 	""" Toggles or turns on/off record """
 	if value in KEYWORDS:
@@ -441,7 +447,6 @@ class ClyphXGlobalActions(ControlSurfaceComponent):
     def set_continue_playback(self, track, xclip, ident, value = None):
 	""" Continue playback from stop point """
 	self.song().continue_playing()
-	
 	
     def set_stop_all(self, track, xclip, ident, value = None):
 	""" Stop all clips w/no quantization option for Live 9 """
